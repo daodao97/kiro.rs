@@ -9,10 +9,10 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "8990:8990"
-    # volumes:
-    #   - type: bind
-    #     source: ./config
-    #     target: /app/config
-    #     bind:
-    #       create_host_path: false
+    volumes:
+      - type: bind
+        source: ./../files/app/config
+        target: /app/config
+        bind:
+          create_host_path: false
     restart: unless-stopped
